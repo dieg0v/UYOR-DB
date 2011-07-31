@@ -450,6 +450,7 @@ class Db {
     $data = array();
     $i = 0;
     while ($row = $result->fetch_object()) {
+      $data[$i] = new stdClass();
       foreach ($row as $key => $value) {
         $data[$i]->$key = stripslashes($value);
       }
