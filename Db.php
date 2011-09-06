@@ -276,7 +276,7 @@ class Db {
     for ($i = 0; $i < $total_data; $i++) {
       $j = 0;
       foreach ($akeys as $key) {
-        if ($insert_data[$i]->$key) {
+        if ($insert_data[$i]->$key !== null) {
           $value = $this->mysqli->real_escape_string($insert_data[$i]->$key);
           $value = "'$value'";
         } else {
